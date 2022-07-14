@@ -1,5 +1,26 @@
+// function accum(s) {
+//     // your code
+//     s = s.toUpperCase();
+//     var myStr = "";
+//     for (let i = 0; i < s.length; i++) {
+//         myStr = myStr + (s[i]).repeat(i) + '-';
+//     }
+//     return myStr.slice(0, -1);
+// }
+
 function accum(s) {
-    // your code
+    let myArr = []
+    let lowerStr = s.toLowerCase()
+
+    for (let i = 0; i < lowerStr.length; i++) {
+        let str = lowerStr[i].toUpperCase()
+        for (let j = 0; j < i; j++) {
+            str += lowerStr[i]
+        }
+        myArr.push(str)
+    }
+
+    return myArr.join("-")
 }
 
 console.log(accum("ZpglnRxqenU")); // "Z-Pp-Ggg-Llll-Nnnnn-Rrrrrr-Xxxxxxx-Qqqqqqqq-Eeeeeeeee-Nnnnnnnnnn-Uuuuuuuuuuu"
